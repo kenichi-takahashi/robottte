@@ -1,0 +1,32 @@
+{
+  "name": "robottte",
+  "version": "1.0.0",
+  "description": "robotttewebsite",
+  "main": "index.js",
+  "serve": "vue-cli-service serve",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vue-cli-service build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kenichi-takahashi/robottte.git"
+  },
+  "keywords": [
+    "robottte"
+  ],
+  "author": "kenichitakahashi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kenichi-takahashi/robottte/issues"
+  },
+  "homepage": "https://github.com/kenichi-takahashi/robottte#readme",
+  "dependencies": {
+    "@vue/cli-service": "^5.0.8",
+    "bulma": "^0.9.4",
+    "sass": "^1.69.5",
+    "sass-loader": "^13.3.2",
+    "vue": "^3.3.8",
+    "vue-template-compiler": "^2.7.15"
+  }
+}
