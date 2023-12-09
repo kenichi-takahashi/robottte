@@ -29,9 +29,14 @@ app.get('/health', (req, res) => {
 //app.get('/', (req, res) => {
 //  res.send('Hello, World!');
 // });
-app.use(cors());
+const corsOptions = {
+  origin: 'https://kenichi-takahashi.github.io',
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 
-app.use(express.static('public'));
+// app.use(express.static('public'));
+// app.use(express.static(path.join(__dirname, 'dist')));
 
 
 // ボディーパーサーを使用してPOSTデータをパース
@@ -77,14 +82,23 @@ app.post('/sendEmail', (req, res) => {
 });
 
   // ここで静的ファイルを提供
-  app.use(express.static(path.join(__dirname, '../dist')));
+  // app.use(express.static(path.join(__dirname, '../dist')));
+  // app.use(express.static(path.join(__dirname, '../dist')));
+  app.use('/robottte', express.static(path.join(__dirname, '../dist')));
+
   // app.use(express.static(path.join(__dirname, 'dist')));
   // app.use('/', serveStatic(path.join(__dirname, '../dist')));
 
   // すべてのルートでindex.htmlを提供
   // index.htmlを提供
+//  app.get('*', function (req, res) {
+//    res.sendFile(path.join(__dirname, '../dist/index.html'))
+//  });
+//  app.get('*', function (req, res) {
+//    res.sendFile(path.join(__dirname, '../dist', 'index.html'));
+//  });
   app.get('*', function (req, res) {
-    res.sendFile(path.join(__dirname, '../dist/index.html'))
+    res.sendFile(path.join(__dirname, '../dist', 'index.html'));
   });
 
   //app.get('/*', (req,res) => {
