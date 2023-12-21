@@ -20,7 +20,8 @@ module.exports = defineConfig({
       // 本番環境用の設定
       config.outputDir = 'dist';
       config.productionSourceMap = false;
-      config.publicPath = '/'; // プロジェクト名に合わせて変更
+      config.publicPath = './';
+      //config.publicPath = '/'; // プロジェクト名に合わせて変更
     } else {
       // 開発環境用の設定
       config.devServer.port = 3000; // ローカル環境のポート番号
