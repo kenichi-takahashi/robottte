@@ -3903,7 +3903,7 @@ joi@^17.4.0:
 
 jquery-scrollify@^1.0.21:
   version "1.0.21"
-  resolved "https://registry.npmjs.org/jquery-scrollify/-/jquery-scrollify-1.0.21.tgz"
+  resolved "https://registry.yarnpkg.com/jquery-scrollify/-/jquery-scrollify-1.0.21.tgz#e529330632e8daf47fcd41c2dafc6d7f9355aee3"
   integrity sha512-uh/ltqmyIV8h1AvuQH0foZdSWVNqJglV0+WL84qOJMYWfvB7OxXDFfmfKUUOHSi1WnhYlKbi6QeRRb7x0pJJbQ==
   dependencies:
     jquery ">=1.7"

@@ -41,7 +41,7 @@ export default {
     enlargeNeon() {
       this.$refs.neon.style.transform = 'scale(1.2)';
     },
-    resetLogo() {
+    resetNeon() {
       this.$refs.neon.style.transform = 'scale(1)';
     },
   },

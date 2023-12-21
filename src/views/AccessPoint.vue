@@ -21,30 +21,30 @@
 </template>
 
 <script>
-/* global google */ // この行を追加
+// /* global google */ // この行を追加
 export default {
-//  data() {
-//    return {
-//      pageTitle: 'AccessPoint',
-//      apiKey: process.env.VUE_APP_GOOGLE_MAPS_API_KEY,
-//    };
-//  },
+    data() {
+      return {
+        pageTitle: 'AccessPoint',
+    //      apiKey: process.env.VUE_APP_GOOGLE_MAPS_API_KEY,
+      };
+    },
 //  computed: {
 //    mapUrl() {
 //      return `https://www.google.com/maps/embed/v1/place?key=${this.apiKey}&q=東京都練馬区北町２-21-10`;
 //    }
 //  },
-    mounted() {
-    this.$nextTick(() => {
-      if (typeof google !== 'undefined' && google.maps) {
-        // マップの初期化
-        new google.maps.Map(document.getElementById('map'), { // 'const map =' を削除
-          center: { lat: -34.397, lng: 150.644 },
-          zoom: 8
-        });
-      }
-    });
-  }
+//    mounted() {
+//    this.$nextTick(() => {
+//      if (typeof google !== 'undefined' && google.maps) {
+//        マップの初期化
+//        new google.maps.Map(document.getElementById('map'), { // 'const map =' を削除
+//          center: { lat: -34.397, lng: 150.644 },
+//          zoom: 8
+//        });
+//      }
+//    });
+//  }
 };
 
 </script>

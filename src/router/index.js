@@ -15,10 +15,10 @@ const routes = [
     path: '/',
     components: {
       default: CompanyOverview,  // デフォルトビュー
-      box2: CompanyOverview,     // 名前付きビュー 'box2'
-      box3: ProductIntroduction, // 名前付きビュー 'box3'
-      box4: AccessPoint, // 名前付きビュー 'box3'
-      box5: CompanyQuery // 名前付きビュー 'box3'
+      box1: CompanyOverview,     // 名前付きビュー 'box2'
+      box2: ProductIntroduction, // 名前付きビュー 'box3'
+      box3: AccessPoint, // 名前付きビュー 'box3'
+      box4: CompanyQuery // 名前付きビュー 'box3'
     }
   },
   // 他のルート定義
