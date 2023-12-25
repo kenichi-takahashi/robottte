@@ -1,9 +1,11 @@
 $.scrollify({
     section : ".box",//1ページスクロールさせたいエリアクラス名
+    sectionName: false,
     scrollbars:"false",//スクロールバー表示・非表示設定
-    interstitialSection : "#header,#footer",//ヘッダーフッターを認識し、1ページスクロールさせず表示されるように設定
+    offset: -80,
+    interstitialSection : "#header,#footer",//をとった。ヘッダーフッターを認識し、1ページスクロールさせず表示されるように設定
     easing: "swing", // 他にもlinearやeaseOutExpoといったjQueryのeasing指定可能
-    scrollSpeed: 300, // スクロール時の速度
+    scrollSpeed: 600, // スクロール時の速度
     
     //以下、ページネーション設定
     before:function(i,panels) {
@@ -14,7 +16,7 @@ $.scrollify({
     afterRender:function() {
     var pagination = "<ul class=\"pagination\">";
     var activeClass = "";
-    $(".box").each(function(i) {this.Area
+    $(".box").each(function(i) {//1ページスクロールさせたいエリアクラス名を指定
     activeClass = "";
     if(i===$.scrollify.currentIndex()) {
     activeClass = "active";

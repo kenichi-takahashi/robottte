@@ -8,13 +8,18 @@
     </div>
     <!-- ナビゲーションメニュー -->
     <nav v-if="menuActive">
-      <router-link to="/">Home</router-link>
+      <!-- <router-link to="/message">Message</router-link>
       <router-link to="/companyoverview">Overview</router-link>
       <router-link to="/productintroduction">Product</router-link>
       <router-link to="/accesspoint">Access</router-link>
-      <router-link to="/companyquery">Query</router-link>
+      <router-link to="/companyquery">Query</router-link>-->
+      <a href="javascript:void(0)" @click="scrollToTop">Top</a>
+      <a href="#boxa">Overview</a>
+      <a href="#boxb">Product</a>
+      <a href="#boxc">Access</a>
+      <a href="#boxd">Query</a>
     </nav>
-    <header id="header">
+    <header id="header" data-section-name="header">
         <div id="app" class="fade-in">
             <img
               src="@/assets/logo.png"
@@ -24,37 +29,17 @@
               @mouseover="enlargeLogo"
               @mouseleave="resetLogo"
               @click="goToTop"
-            >  
+            >
         </div>
-        </header>
-    <section id="box1" class="box" data-section-name="Area1">
-                  <HelloWorld v-if="showHelloWorld" msg="
-      私たちrobottteは<span style='color: red;'>『年齢を重ねながら、幸せに暮らせる社会の実現』</span>に向け、
+      <HelloWorld v-if="showHelloWorld" msg="
+      <span style='font-size: 1.8em'>私たちrobottteは<span style='color: red'>『年齢を重ねながら、幸せに暮らせる社会の実現』</span>に向け、
       ロボの手で、人の手を支えて参ります。私たちの志、思いについて、記載しております。
       私たちと一緒に、より良い未来を創造していきませんか。"/>
-
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <router-view name="box1"></router-view>
+    </header>
+      <main>
+      <section class="box" data-section-name="Area1"><!--id="box2" -->
+      <router-view name="boxa"></router-view>
       </section>
-      <section id="box2" class="box" data-section-name="Area2">
-            <br>
       <br>
       <br>
       <br>
@@ -63,48 +48,27 @@
       <br>
       <br>
       <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <HelloWorld v-if="showHelloWorld" msg="
-      開発しているプロダクトについてご紹介しております。
-      私たちのアプローチは、システムが人と競争するのではなく、
-      テクノロジーだからこそ役に立てる場所を見つけます。"/>
-      <router-view name="box2"></router-view>
+      <section class="box" data-section-name="Area2"><!--id="box2" -->
+      <router-view name="boxb"></router-view>
       </section>      
-      <section id="box3" class="box" data-section-name="Area3">
       <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <section class="box" data-section-name="Area3"><!--id="box3" -->
       <HelloWorld v-if="showHelloWorld" msg="
       私達の拠点情報になります。働く場所に囚われず、
       リモートで働ける環境もございます。"/>
-      <router-view name="box3"></router-view>
-            <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+      <router-view name="boxc"></router-view>
       </section>
-      <section id="box4" class="box" data-section-name="Area4">
-            <br>
       <br>
       <br>
       <br>
@@ -117,16 +81,44 @@
       <br>
       <br>
       <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+      <section class="box" data-section-name="Area4"><!--id="box4" -->
       <HelloWorld v-if="showHelloWorld" msg="
       お問合せはこちらにお願いします。"/>
-      <router-view name="box4"></router-view>
-      <!--/box--></section>     
+      <router-view name="boxd"></router-view>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <!--/box--></section>
+      </main>
+        <footer id="footer" data-section-name="footer"></footer>
 </div>
 </template>
 
@@ -140,14 +132,18 @@ import scrollify from 'jquery-scrollify';
 Vue.use(VueRouter);
 
 export default {
+  props: ['msg'],
   name: 'App',
   components: {
     HelloWorld
   },
+//  mounted() {
+//    this.$nextTick(() => {
+//      scrollify(/* オプション */);
+//    });
+//  },
   mounted() {
-    this.$nextTick(() => {
-      scrollify(/* オプション */);
-    });
+              scrollify({section : ".box",});
   },
   methods: {
     enlargeLogo() {
@@ -165,6 +161,9 @@ export default {
     toggleMenu() {
       this.menuActive = !this.menuActive;
     },
+    scrollToTop() {
+      window.scrollTo(0, 0);
+    },
   },
   data() {
     return {
@@ -179,11 +178,16 @@ export default {
       this.showHelloWorld = to.path === '/';
     }
   },
+  computed: {
+    formattedMessage() {
+      return this.msg.replace(/<span style='color: red;'>/g, "<span class='custom-text'>");
+    }
+  },
 }
 </script>
 
 <style scoped>
-@import '@/assets/css/pagination.css'; 
+@import '@/assets/css/6-1.css'; 
 
 #app {
   font-family: 'BIZ UDPゴシック', 'Avenir', Helvetica, Arial, sans-serif;
@@ -192,6 +196,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.custom-text {
+  font-family: 'BIZ UDPゴシック', sans-serif;
+  font-size: 1.2em; /* 例として1.2emを使用 */
 }
 
 .logo {

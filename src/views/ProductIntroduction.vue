@@ -2,6 +2,11 @@
 <template>
   <div class="ProductIntroduction">
     <h1>{{ pageTitle }}</h1>
+          <HelloWorld v-if="showHelloWorld" msg="
+      開発しているプロダクトについてご紹介しております。
+      私たちのアプローチは、システムが人と競争するのではなく、
+      テクノロジーだからこそ役に立てる場所を見つけます。"/>
+
 <div class="bullets" style="display: flex; justify-content: center;">
   <br>
     <div id="app" class="fade-in">
@@ -31,10 +36,17 @@
 </template>
 
 <script>
+import HelloWorld from '../components/HelloWorld.vue'
+
 export default {
+  name: 'App',
+  components: {
+    HelloWorld
+  },
   data() {
     return {
       pageTitle: '製品紹介',
+      showHelloWorld: true,
     };
   },
     methods: {
